@@ -13,48 +13,47 @@
 
 
 int main(int argc, const char * argv[]) {
-    
     /* ****Data Reading from CSV files**** */
     /* **Read size of CSV files ** */
     //GenCorrectiveDispatchLimitData_54Unit Size
     int row_GenCorrective, col_GenCorrective;
-    FILE *f_GenCorrective_stream = fopen("/Users/zhangcaihua/Desktop/Parallel_Codes_Collaboration/Data_CSV/GenCorrectiveDispatchLimitData_54Unit.csv", "r");
-    file_size(f_GenCorrective_stream, &row_GenCorrective, &col_GenCorrective);// get rows and cols from file
+    FILE *f_GenCorrective_stream = fopen("/Users/zhangcaihua/Desktop/Parallel_Codes_Collaboration/Data_CSV_updated/GenCorrectiveDispatchLimitData.csv", "r");
+    File_Size(f_GenCorrective_stream, &row_GenCorrective, &col_GenCorrective);// get rows and cols from file
     
     //GenData_54Unit_IEEE118 Size
     int row_GenData, col_GenData;
-    FILE *f_GenData_stream = fopen("/Users/zhangcaihua/Desktop/Parallel_Codes_Collaboration/Data_CSV/GenData_54Unit_IEEE118.csv", "r");
-    file_size(f_GenData_stream, &row_GenData, &col_GenData);// get rows and cols from file
+    FILE *f_GenData_stream = fopen("/Users/zhangcaihua/Desktop/Parallel_Codes_Collaboration/Data_CSV_updated/GenData.csv", "r");
+    File_Size(f_GenData_stream, &row_GenData, &col_GenData);// get rows and cols from file
     
     //LineData_186Branch_IEEE118 Size
     int row_LineData, col_LineData;
-    FILE *f_LineData_stream = fopen("/Users/zhangcaihua/Desktop/Parallel_Codes_Collaboration/Data_CSV/LineData_186Branch_IEEE118.csv", "r");
-    file_size(f_LineData_stream, &row_LineData, &col_LineData);// get rows and cols from file
+    FILE *f_LineData_stream = fopen("/Users/zhangcaihua/Desktop/Parallel_Codes_Collaboration/Data_CSV_updated/LineData.csv", "r");
+    File_Size(f_LineData_stream, &row_LineData, &col_LineData);// get rows and cols from file
     
     //LoadFactor_91Side_IEEE118 Size
     int row_LoadFactor, col_LoadFactor;
-    FILE *f_LoadFactor_stream = fopen("/Users/zhangcaihua/Desktop/Parallel_Codes_Collaboration/Data_CSV/LoadFactor_91Side_IEEE118.csv", "r");
-    file_size(f_LoadFactor_stream, &row_LoadFactor, &col_LoadFactor);// get rows and cols from file
+    FILE *f_LoadFactor_stream = fopen("/Users/zhangcaihua/Desktop/Parallel_Codes_Collaboration/Data_CSV_updated/LoadFactor.csv", "r");
+    File_Size(f_LoadFactor_stream, &row_LoadFactor, &col_LoadFactor);// get rows and cols from file
     
     //LoadForecastData_24Hour_IEEE118 Size
     int row_LoadForecast, col_LoadForecast;
-    FILE *f_LoadForecast_stream = fopen("/Users/zhangcaihua/Desktop/Parallel_Codes_Collaboration/Data_CSV/LoadForecastData_24Hour_IEEE118.csv", "r");
-    file_size(f_LoadForecast_stream, &row_LoadForecast, &col_LoadForecast);// get rows and cols from file
+    FILE *f_LoadForecast_stream = fopen("/Users/zhangcaihua/Desktop/Parallel_Codes_Collaboration/Data_CSV_updated/LoadForecastData.csv", "r");
+    File_Size(f_LoadForecast_stream, &row_LoadForecast, &col_LoadForecast);// get rows and cols from file
     
     //SFData_186Branch118Bus_IEEE118 Size
     int row_SFData, col_SFData;
-    FILE *f_SFData_stream = fopen("/Users/zhangcaihua/Desktop/Parallel_Codes_Collaboration/Data_CSV/SFData_186Branch118Bus_IEEE118.csv", "r");
-    file_size(f_SFData_stream, &row_SFData, &col_SFData);// get rows and cols from file
+    FILE *f_SFData_stream = fopen("/Users/zhangcaihua/Desktop/Parallel_Codes_Collaboration/Data_CSV_updated/ShiftFactorData.csv", "r");
+    File_Size(f_SFData_stream, &row_SFData, &col_SFData);// get rows and cols from file
     
     //SRandMSRData_54Unit_forIEEE118 Size
     int row_SRandMSRData, col_SRandMSRData;
-    FILE *f_SRandMSRData_stream = fopen("/Users/zhangcaihua/Desktop/Parallel_Codes_Collaboration/Data_CSV/SRandMSRData_54Unit_forIEEE118.csv", "r");
-    file_size(f_SRandMSRData_stream, &row_SRandMSRData, &col_SRandMSRData);// get rows and cols from file
+    FILE *f_SRandMSRData_stream = fopen("/Users/zhangcaihua/Desktop/Parallel_Codes_Collaboration/Data_CSV_updated/SRCostandMaxSustainedRateData.csv", "r");
+    File_Size(f_SRandMSRData_stream, &row_SRandMSRData, &col_SRandMSRData);// get rows and cols from file
     
     //SRTData_24Hour_forIEEE118 Size
     int row_SRTData, col_SRTData;
-    FILE *f_SRTData_stream = fopen("/Users/zhangcaihua/Desktop/Parallel_Codes_Collaboration/Data_CSV/SRTData_24Hour_forIEEE118.csv", "r");
-    file_size(f_SRTData_stream, &row_SRTData, &col_SRTData);// get rows and cols from file
+    FILE *f_SRTData_stream = fopen("/Users/zhangcaihua/Desktop/Parallel_Codes_Collaboration/Data_CSV_updated/SRSystemRequirementData.csv", "r");
+    File_Size(f_SRTData_stream, &row_SRTData, &col_SRTData);// get rows and cols from file
     //printf("row=%d\t col=%d\t\n",row_GenData,col_GenData);
     
     /* **Read data according to the size of CSV files** */
@@ -127,6 +126,8 @@ int main(int argc, const char * argv[]) {
     Data_Read_Corrective_Test(row_SRTData, col_SRTData, SRTData_24Hour_forIEEE118_data, name8);
     printf("row = %d, col = %d\n", row_SRTData, col_SRTData);
     
+    
+    
     /*Free file pointers and data memory*/
     fclose(f_GenCorrective_stream);
     free(GenCorrectiveDispatchLimitData_54Unit_data);
@@ -136,8 +137,6 @@ int main(int argc, const char * argv[]) {
     free(LineData_186Branch_IEEE118_data);
     fclose(f_LoadFactor_stream);
     free(LoadFactor_91Side_IEEE118_data);
-    
-    
     fclose(f_LoadForecast_stream);
     free(LoadForecastData_24Hour_IEEE118_data);
     fclose(f_SFData_stream);

@@ -77,7 +77,7 @@ typedef struct SRT_Data{
 
 
 /*Function Prototypes*/
-int file_size(FILE * fstream, int *row, int *col);
+int File_Size(FILE * fstream, int *row, int *col);
 int Data_Read( FILE * fstream, int row, int col, double* info);
 int Data_Read_Corrective_Test(int row, int col, double *testing_array, char*name);
 
