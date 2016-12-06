@@ -17,42 +17,42 @@ int main(int argc, const char * argv[]) {
     /* **Read size of CSV files ** */
     //GenCorrectiveDispatchLimitData Size
     int row_GenCorrective, col_GenCorrective;
-    FILE *f_GenCorrective_stream = fopen("/Users/zhangcaihua/Desktop/Parallel_Codes_Collaboration/Data_CSV_updated/GenCorrectiveDispatchLimitData.csv", "r");
+    FILE *f_GenCorrective_stream = fopen("/home/lg1033/Desktop/Parallel_Codes_Collaboration/Data_CSV_updated/GenCorrectiveDispatchLimitData.csv", "r");
     File_Size(f_GenCorrective_stream, &row_GenCorrective, &col_GenCorrective);// get rows and cols from file
     
     //GenData Size
     int row_GenData, col_GenData;
-    FILE *f_GenData_stream = fopen("/Users/zhangcaihua/Desktop/Parallel_Codes_Collaboration/Data_CSV_updated/GenData.csv", "r");
+    FILE *f_GenData_stream = fopen("/home/lg1033/Desktop/Parallel_Codes_Collaboration/Data_CSV_updated/GenData.csv", "r");
     File_Size(f_GenData_stream, &row_GenData, &col_GenData);// get rows and cols from file
     
     //LineData Size
     int row_LineData, col_LineData;
-    FILE *f_LineData_stream = fopen("/Users/zhangcaihua/Desktop/Parallel_Codes_Collaboration/Data_CSV_updated/LineData.csv", "r");
+    FILE *f_LineData_stream = fopen("/home/lg1033/Desktop/Parallel_Codes_Collaboration/Data_CSV_updated/LineData.csv", "r");
     File_Size(f_LineData_stream, &row_LineData, &col_LineData);// get rows and cols from file
     
     //LoadFactor Size
     int row_LoadFactor, col_LoadFactor;
-    FILE *f_LoadFactor_stream = fopen("/Users/zhangcaihua/Desktop/Parallel_Codes_Collaboration/Data_CSV_updated/LoadFactor.csv", "r");
+    FILE *f_LoadFactor_stream = fopen("/home/lg1033/Desktop/Parallel_Codes_Collaboration/Data_CSV_updated/LoadFactor.csv", "r");
     File_Size(f_LoadFactor_stream, &row_LoadFactor, &col_LoadFactor);// get rows and cols from file
     
     //LoadForecastData Size
     int row_LoadForecast, col_LoadForecast;
-    FILE *f_LoadForecast_stream = fopen("/Users/zhangcaihua/Desktop/Parallel_Codes_Collaboration/Data_CSV_updated/LoadForecastData.csv", "r");
+    FILE *f_LoadForecast_stream = fopen("/home/lg1033/Desktop/Parallel_Codes_Collaboration/Data_CSV_updated/LoadForecastData.csv", "r");
     File_Size(f_LoadForecast_stream, &row_LoadForecast, &col_LoadForecast);// get rows and cols from file
     
     //ShiftFactorData Size
     int row_SFData, col_SFData;
-    FILE *f_SFData_stream = fopen("/Users/zhangcaihua/Desktop/Parallel_Codes_Collaboration/Data_CSV_updated/ShiftFactorData.csv", "r");
+    FILE *f_SFData_stream = fopen("/home/lg1033/Desktop/Parallel_Codes_Collaboration/Data_CSV_updated/ShiftFactorData.csv", "r");
     File_Size(f_SFData_stream, &row_SFData, &col_SFData);// get rows and cols from file
     
     //SRCostandMaxSustainedRateData Size
     int row_SRandMSRData, col_SRandMSRData;
-    FILE *f_SRandMSRData_stream = fopen("/Users/zhangcaihua/Desktop/Parallel_Codes_Collaboration/Data_CSV_updated/SRCostandMaxSustainedRateData.csv", "r");
+    FILE *f_SRandMSRData_stream = fopen("/home/lg1033/Desktop/Parallel_Codes_Collaboration/Data_CSV_updated/SRCostandMaxSustainedRateData.csv", "r");
     File_Size(f_SRandMSRData_stream, &row_SRandMSRData, &col_SRandMSRData);// get rows and cols from file
     
     //SRSystemRequirementData Size
     int row_SRTData, col_SRTData;
-    FILE *f_SRTData_stream = fopen("/Users/zhangcaihua/Desktop/Parallel_Codes_Collaboration/Data_CSV_updated/SRSystemRequirementData.csv", "r");
+    FILE *f_SRTData_stream = fopen("/home/lg1033/Desktop/Parallel_Codes_Collaboration/Data_CSV_updated/SRSystemRequirementData.csv", "r");
     File_Size(f_SRTData_stream, &row_SRTData, &col_SRTData);// get rows and cols from file
     //printf("row=%d\t col=%d\t\n",row_GenData,col_GenData);
     
@@ -146,24 +146,22 @@ int main(int argc, const char * argv[]) {
     char *name8="test8";
     
     Data_Read_Corrective_Test(row_GenCorrective, col_GenCorrective, GenCorrectiveDispatchLimitData, name1);
-    printf("row = %d, col = %d\n", row_GenCorrective, col_GenCorrective);
+    printf("row_GenCorrective = %d, col_GenCorrective = %d\n", row_GenCorrective, col_GenCorrective);
     Data_Read_Corrective_Test(row_GenData, col_GenData, GenData, name2);
-    printf("row = %d, col = %d\n", row_GenData, col_GenData);
+    printf("row_GenData = %d, col_GenData = %d\n", row_GenData, col_GenData);
     Data_Read_Corrective_Test(row_LineData, col_LineData, LineData, name3);
-    printf("row = %d, col = %d\n", row_LineData, col_LineData);
+    printf("row_LineData = %d, col_LineData = %d\n", row_LineData, col_LineData);
     Data_Read_Corrective_Test(row_LoadFactor, col_LoadFactor, LoadFactor, name4);
-    printf("row = %d, col = %d\n", row_LoadFactor, col_LoadFactor);
+    printf("row_LoadFactor = %d, col_LoadFactor = %d\n", row_LoadFactor, col_LoadFactor);
     
     Data_Read_Corrective_Test(row_LoadForecast, col_LoadForecast, LoadForecastData, name5);
-    printf("row = %d, col = %d\n", row_LoadForecast, col_LoadForecast);
+    printf("row_LoadForecast = %d, col_LoadForecast = %d\n", row_LoadForecast, col_LoadForecast);
     Data_Read_Corrective_Test(row_SFData, col_SFData, ShiftFactorData, name6);
-    printf("row = %d, col = %d\n", row_SFData, col_SFData);
+    printf("row_SFData = %d, col_SFData = %d\n", row_SFData, col_SFData);
     Data_Read_Corrective_Test(row_SRandMSRData, col_SRandMSRData, SRCostandMaxSustainedRateData, name7);
-    printf("row = %d, col = %d\n", row_SRandMSRData, col_SRandMSRData);
+    printf("row_SRandMSRData = %d, col_SRandMSRData = %d\n", row_SRandMSRData, col_SRandMSRData);
     Data_Read_Corrective_Test(row_SRTData, col_SRTData, SRSystemRequirementData, name8);
-    printf("row = %d, col = %d\n", row_SRTData, col_SRTData);
-    
-    
+    printf("row_SRTData = %d, col_SRTData = %d\n", row_SRTData, col_SRTData);
     
     /*Free file pointers and data memory*/
     fclose(f_GenCorrective_stream);
@@ -183,7 +181,115 @@ int main(int argc, const char * argv[]) {
     fclose(f_SRTData_stream);
     free(SRSystemRequirementData);
 
-    
+
+    /* **Print iteratively to check the arrays in the structures** */
+    for (int i = 0; i < col_GenCorrective; ++i){
+        printf("%f", GenCorrectiveDispatchLimitData_Set.Gen_CorrectiveDispatchLimit[i]);
+        printf("\n");
+    }
+
+
+/* ***************************************************************************************************************************************** */
+
+
+    /* **Define and set the control constants** */
+    const int k_limit=1000;
+    const int Convergence_threshold_Coefficient=0.2;
+    const int Convergence_threshold_PG_GENbase=Convergence_threshold_Coefficient;
+    const int Lambda_AllModule_Initial=0;    
+    const int C_AllModule_Initial=0.05;
+    const int Beta_UpdateC=1.01;
+    const int RelaxGENBase_capacity=0; //=0,not relax
+    const int RelaxPowerBalance_base=0; //=0,not relax
+    printf("k_limit = %d, Convergence_threshold_PG_GENbase = %d, Lambda_AllModule_Initial = %d, C_AllModule_Initial = %d, Beta_UpdateC = %d, RelaxGENBase_capacity = %d, RelaxPowerBalance_base = %d \n", k_limit, Convergence_threshold_PG_GENbase, Lambda_AllModule_Initial, C_AllModule_Initial, Beta_UpdateC, RelaxGENBase_capacity, RelaxPowerBalance_base);
+    printf("\n");
+
+
+
+   /* **Input generator and system paremeters** */
+
+
+
+
+
+
+    /* **Define and value the common constants** */
+    const int NT = col_LoadForecast, NG = col_GenData, NLd = col_LoadFactor, NB = col_SFData, NL = row_SFData;
+    printf("NT = %d, NG = %d, NLd = %d, NB = %d, NL = %d \n", NT, NG, NLd, NB, NL);
+    printf("\n");
+
+
+
+    /* **Define and initialize the variables** */
+    double PG_GENbase_k[NG*NT];
+    int I_GENbase_k[NG*NT];
+    double PG_Systembase_k[NG*NT];
+
+    for (int i = 0; i < NG*NT; ++i){
+        PG_GENbase_k[i]=0;
+        I_GENbase_k[i]=0;
+        PG_Systembase_k[i]=0;
+
+        printf("%f", PG_GENbase_k[i]);
+        printf("\n");
+    }
+
+
+
+    /* **Define and initialize the iteratively changed parameters** */
+    int k=0;
+    int Covergence_judge_PG_GENbase=0;
+    double Lambda_PG_GENbase_k[NG*NT];
+    double C_PG_GENbase_k[NG*NT];
+    double Difference_PG_GENbase_k[NG*NT];
+    int Convergence_ElementMatrix_PG_GENbase_k[NG*NT];
+    int Convergence_Percentage_PG_GENbase_k=0;
+    printf("k = %d, Covergence_judge_PG_GENbase = %d, Convergence_Percentage_PG_GENbase_k = %d \n", k, Covergence_judge_PG_GENbase, Convergence_Percentage_PG_GENbase_k);
+
+    for (int i = 0; i < NG*NT; ++i){
+        Lambda_PG_GENbase_k[i]=Lambda_AllModule_Initial;
+        C_PG_GENbase_k[i]=C_AllModule_Initial;
+        Difference_PG_GENbase_k[i]=0;
+        Convergence_ElementMatrix_PG_GENbase_k[i]=0;
+
+        printf("%f", Lambda_PG_GENbase_k[i]);
+        printf("\n");
+   }
+
+
+
+   /* **Iterative calculation** */
+    while (Covergence_judge_PG_GENbase == 0 && k < k_limit)
+    {
+        /* calculate the optimal resluts of GEN base module*/    
+//        Module_GENbase(); //call function to calculate
+
+        /* calculate the optimal resluts of System base module*/    
+//        Module_Systembase(); //call function to calculate    
+
+        /* analyze the convergence of PG_GENbase*/
+
+
+
+        /* if not convergence, update parameters*/
+        if (Covergence_judge_PG_GENbase == 0){
+        k=k+1;
+//        Update_Penalty(); //call function to update Lagrangian penalties
+        }
+
+    } //end of while loop
+
+
+
+   /* **Build and output optimal results** */
+
+
+
+   /* **Calculate and output operation cost** */
+
+
+   /* **Print the critical parameters** */
+    printf("k = %d \n", k);
     
     return 0;
 }
