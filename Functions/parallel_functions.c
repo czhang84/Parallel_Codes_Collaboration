@@ -89,6 +89,24 @@ int Data_Read( FILE * fstream, int row, int col, double* info)
 }
 
 
+/*Structure Read*/
+// This will let the structure store the address of beginning of each row. The array will be parsed as rows through column number even the origional data array is a very long array
+// This will read double variables array
+void Data_StoreTo_Structure (double ** struct_member_ptr, double * array_data_ptr,int row, int col) // This will accept the address of first element of the structure. The structure will store same type of pointers.
+{
+    
+    //struct_member_ptr = &GenCorrectiveDispatchLimitData_Set.Gen_BusNum; // This is the first element of the structure
+    for (int i = 0; i < row; i ++){
+        //printf("%p\n", struct_member_ptr);
+        //struct_member_ptr++;
+        *struct_member_ptr = &array_data_ptr[i*col];
+        struct_member_ptr++;
+        //printf("%p\n", *struct_member_ptr);
+    }
+}
+
+
+
 /*Data read correctiveness testing*/
 int Data_Read_Corrective_Test(int row, int col, double *testing_array, char*name)
 {
