@@ -309,7 +309,7 @@ int main(int argc,  char * argv[]) {
             {
                 printf("the stop_counter is %d\n", stop_counter);
                 p0_stop_decision( &nonstop_decision,  stop_counter, end_point); // You may put your **Iterative calculation** section into this function ******Gong******
-                printf("stop decision is %d ", nonstop_decision);
+                printf("nonstop decision is %d ", nonstop_decision);
                 printf("\n");
                 p0_send_decision( size_mpi, nonstop_decision);
                 
