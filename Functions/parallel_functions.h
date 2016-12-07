@@ -78,13 +78,34 @@ typedef struct SRT_Data{
 
 
 /*Function Prototypes*/
+
+// **Raw_Data read from file related functions**
 int File_Size(FILE * fstream, int *row, int *col);
 int Data_Read( FILE * fstream, int row, int col, double* info);
 int Data_Read_Corrective_Test(int row, int col, double *testing_array, char*name);
 
+// **Readed_Data store to structure functions**
 void Data_StoreTo_Structure (double ** struct_member_ptr, double * array_data_ptr,int row, int col) ;
 
+// **Array (Matrix in Matlab) operation functions**
+void Array_initial_double(double *Array_initialition, double length);
+void Array_initial_int(int *Array_initialition, double length);
 
+// **Time related functions**
+void timestamp ( );
 
+// **MPI related functions**
+// *Master node functions*
+void p0_stop_decision(int *stop_decision, int stop_counter, int end_point);
+void p0_send_decision(int process_size,int stop_decision);
+void p0_set_input ( double *input, int row, int col );
+void p0_send_input ( double *input, int receiving_process_ID, int receiving_process_tag, int row, int col );
+void p0_receive_output ( double *output, int sending_process_ID, int sending_process_tag, int row, int col );
 
+// *Slave node functions*
+void p1_receive_decision(int *stop_decision_i, int sending_process_ID, int sending_process_tag);
+void p1_receive_input (double *input_i, int sending_process_ID, int sending_process_tag, int row, int col);
+//void p1_compute_output (double *input_i, int stop_decision_i, int row, int col, double* result);
+void p1_compute_output (double *input_1, double* input_2, int stop_decision_i, int row, int col, double* result);
+void p1_send_output ( double *output_i, int receiving_process_ID, int receiving_process_tag, int row, int col );
 #endif /* parallel_functions_h */
