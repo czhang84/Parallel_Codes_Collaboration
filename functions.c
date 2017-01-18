@@ -14,7 +14,7 @@
 #include <mpi.h>
 #include "declare_function.h"
 //#include "declare_variable.h"
-
+#include "define_macros.h"//******** zhang ******* 1/17/2017
 
 /*Initialize array of type Double (value each element of the array)*/
 void Array_initial_double(double *Array_initialition, double length)
@@ -55,4 +55,56 @@ void timestamp ( )
 # undef TIME_SIZE
 }
 
+/*Determine task allocation from TaskTable*/
+void task_allocation(int **TaskTable_TaskArray, int TaskTable_TaskNumber, int *node, int *scenario, int *module, int *task)
+//**********zhang********** //16/1/2017
+{
+    int node_number = 0, scenario_number = 0, module_number = 0, task_number = 0;
+    int task_table_col_indicator = 0;
+    int max_loop_times;
+    
+    max_loop_times = MAX_NODE_DIGIT;
+    
+    for (int k = 0; k < max_loop_times; k++) {
+        node_number = TaskTable_TaskArray[TaskTable_TaskNumber][task_table_col_indicator] * (int)pow(1, max_loop_times-1-k) + node_number;
+        task_table_col_indicator++;
+        //printf("node number is %d\n", node_number);
+    }
+    
+    max_loop_times = max_loop_times + MAX_SCENARIO_DIGIT;
+    
+    for (int k = task_table_col_indicator; k < max_loop_times; k++) {
+        scenario_number = TaskTable_TaskArray[TaskTable_TaskNumber][task_table_col_indicator] * (int)pow(1, max_loop_times-1-k) + scenario_number;
+        task_table_col_indicator++;
+        //printf("scenario number is %d\n", scenario_number);
+    }
+    
+    max_loop_times = max_loop_times + MAX_MODULE_DIGIT;
+    
+    for (int k = task_table_col_indicator; k < max_loop_times; k++) {
+        module_number = TaskTable_TaskArray[TaskTable_TaskNumber][task_table_col_indicator] * (int)pow(1, max_loop_times-1-k) + module_number;
+        task_table_col_indicator++;
+        //printf("module number is %d\n", module_number);
+    }
+    
+    max_loop_times = max_loop_times + MAX_TASK_DIGIT;
+    
+    for (int k = task_table_col_indicator; k < max_loop_times; k++) {
+        task_number = TaskTable_TaskArray[TaskTable_TaskNumber][task_table_col_indicator] * (int)pow(1, max_loop_times-1-k) + task_number;
+        task_table_col_indicator++;
+        //printf("task number is %d\n", task_number);
+    }
+    
+    //printf("\n");
+    //printf("node number is %d\n", node_number);
+    //printf("scenario number is %d\n", scenario_number);
+    //printf("module number is %d\n", module_number);
+    //printf("task number is %d\n", task_number);
+    
+    *node = node_number;
+    *scenario = scenario_number;
+    *module = module_number;
+    *task = task_number;
+
+}
 

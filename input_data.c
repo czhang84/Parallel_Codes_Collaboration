@@ -12,8 +12,38 @@
 #include <string.h>
 #include <math.h>
 #include "declare_function.h"
-#include "declare_variable.h"
+#include "declare_variable.h" //******** zhang ******* 1/16/2017
+#include "define_macros.h"//******** zhang ******* 1/16/2017
 
+/************************************************** Define Variable This should be done ONLY ONCE**************************************************/ //******** zhang ******* 1/16/2017
+/*Define Structure*/
+SRSystemRequirementData_Struct SRSystemRequirementData_Set; //******** zhang ******* 1/16/2017
+SRCostandMaxSustainedRateData_Struct SRCostandMaxSustainedRateData_Set; //******** zhang ******* 1/16/2017
+LoadForecastData_Struct LoadForecastData_Set; //******** zhang ******* 1/16/2017
+LoadFactor_Struct LoadFactor_Set; //******** zhang ******* 1/16/2017
+LineData_Struct LineData_Set; //******** zhang ******* 1/16/2017
+GenData_Struct GenData_Set; //******** zhang ******* 1/16/2017
+GenCorrectiveDispatchLimitData_Struct GenCorrectiveDispatchLimitData_Set; //******** zhang ******* 1/16/2017
+
+/*Define variables (constant) indicating rows and column of original CSV generator & system data*/
+int row_GenCorrective, col_GenCorrective, //******** zhang ******* 1/16/2017
+row_GenData, col_GenData,
+row_LineData, col_LineData,
+row_LoadFactor, col_LoadFactor,
+row_LoadForecast, col_LoadForecast,
+row_SFData, col_SFData,
+row_SRandMSRData, col_SRandMSRData,
+row_SRTData, col_SRTData;
+
+/*Define pointers (constant) of arrays of sorts of parameters of generator & system*/
+double *GenCorrectiveDispatchLimitData, //******** zhang ******* 1/16/2017
+*GenData,
+*LineData,
+*LoadFactor,
+*LoadForecastData,
+*ShiftFactorData,
+*SRCostandMaxSustainedRateData,
+*SRSystemRequirementData;
 
 
 /**************************************************Function for reading data from CSV files**************************************************/
@@ -22,37 +52,35 @@ int input_data()
 
     /* **Read size of CSV files ** */
     //GenCorrectiveDispatchLimitData Size
-    FILE *f_GenCorrective_stream = fopen("/home/lg1033/Desktop/Parallel_Codes_Collaboration/Data_CSV_updated/GenCorrectiveDispatchLimitData.csv", "r");
+    FILE *f_GenCorrective_stream = fopen("/Users/zhangcaihua/Desktop/Parallel_Codes_Collaboration/Data_CSV_updated/GenCorrectiveDispatchLimitData.csv", "r");
     File_Size(f_GenCorrective_stream, &row_GenCorrective, &col_GenCorrective);// get rows and cols from file
     
     //GenData Size
-    FILE *f_GenData_stream = fopen("/home/lg1033/Desktop/Parallel_Codes_Collaboration/Data_CSV_updated/GenData.csv", "r");
+    FILE *f_GenData_stream = fopen("/Users/zhangcaihua/Desktop/Parallel_Codes_Collaboration/Data_CSV_updated/GenData.csv", "r");
     File_Size(f_GenData_stream, &row_GenData, &col_GenData);// get rows and cols from file
     
     //LineData Size
-    FILE *f_LineData_stream = fopen("/home/lg1033/Desktop/Parallel_Codes_Collaboration/Data_CSV_updated/LineData.csv", "r");
+    FILE *f_LineData_stream = fopen("/Users/zhangcaihua/Desktop/Parallel_Codes_Collaboration/Data_CSV_updated/LineData.csv", "r");
     File_Size(f_LineData_stream, &row_LineData, &col_LineData);// get rows and cols from file
     
     //LoadFactor Size
-    FILE *f_LoadFactor_stream = fopen("/home/lg1033/Desktop/Parallel_Codes_Collaboration/Data_CSV_updated/LoadFactor.csv", "r");
+    FILE *f_LoadFactor_stream = fopen("/Users/zhangcaihua/Desktop/Parallel_Codes_Collaboration/Data_CSV_updated/LoadFactor.csv", "r");
     File_Size(f_LoadFactor_stream, &row_LoadFactor, &col_LoadFactor);// get rows and cols from file
     
     //LoadForecastData Size
-    FILE *f_LoadForecast_stream = fopen("/home/lg1033/Desktop/Parallel_Codes_Collaboration/Data_CSV_updated/LoadForecastData.csv", "r");
+    FILE *f_LoadForecast_stream = fopen("/Users/zhangcaihua/Desktop/Parallel_Codes_Collaboration/Data_CSV_updated/LoadForecastData.csv", "r");
     File_Size(f_LoadForecast_stream, &row_LoadForecast, &col_LoadForecast);// get rows and cols from file
     
     //ShiftFactorData Size
-    FILE *f_SFData_stream = fopen("/home/lg1033/Desktop/Parallel_Codes_Collaboration/Data_CSV_updated/ShiftFactorData.csv", "r");
+    FILE *f_SFData_stream = fopen("/Users/zhangcaihua/Desktop/Parallel_Codes_Collaboration/Data_CSV_updated/ShiftFactorData.csv", "r");
     File_Size(f_SFData_stream, &row_SFData, &col_SFData);// get rows and cols from file
 
-    LoadFactor_Struct LoadFactor_Set;
-    
     //SRCostandMaxSustainedRateData Size
-    FILE *f_SRandMSRData_stream = fopen("/home/lg1033/Desktop/Parallel_Codes_Collaboration/Data_CSV_updated/SRCostandMaxSustainedRateData.csv", "r");
+    FILE *f_SRandMSRData_stream = fopen("/Users/zhangcaihua/Desktop/Parallel_Codes_Collaboration/Data_CSV_updated/SRCostandMaxSustainedRateData.csv", "r");
     File_Size(f_SRandMSRData_stream, &row_SRandMSRData, &col_SRandMSRData);// get rows and cols from file
     
     //SRSystemRequirementData Size
-    FILE *f_SRTData_stream = fopen("/home/lg1033/Desktop/Parallel_Codes_Collaboration/Data_CSV_updated/SRSystemRequirementData.csv", "r");
+    FILE *f_SRTData_stream = fopen("/Users/zhangcaihua/Desktop/Parallel_Codes_Collaboration/Data_CSV_updated/SRSystemRequirementData.csv", "r");
     File_Size(f_SRTData_stream, &row_SRTData, &col_SRTData);// get rows and cols from file
     //printf("row=%d\t col=%d\t\n",row_GenData,col_GenData);
     
@@ -113,18 +141,7 @@ int input_data()
     //SRSystemRequirementData Read
     Data_StoreTo_Structure (&SRSystemRequirementData_Set.SRT_SpiningResreve, SRSystemRequirementData, row_SRTData, col_SRTData) ;//It only accept the first element address of the structure
     
-    //SFData Read (The ShiftFactor use different kind of data structure. It is an array of pointer.)
-    double *SFData_Set[row_SFData];
-    for (int i = 0; i < row_SFData; i++) {
-        SFData_Set[i] = &ShiftFactorData[i*col_SFData];
-    }
-    
-
-    /* **Print iteratively to check the arrays in the structures** */
-    //for (int i = 0; i < 10; ++i){
-    //    printf("In Func: %f", SRCostandMaxSustainedRateData_Set.SR_MSR_MaxSustainedRate[i]);
-    //    printf("\n");
-    //}  
+    //SFData  is not formed as structure data.  										//Lin change!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
 /*FOR TESTING~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~The following are just for testing~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/    
@@ -144,7 +161,6 @@ int input_data()
 //    Data_Read_Corrective_Test(row_LineData, col_LineData, LineData, name3);
 //    printf("row = %d, col = %d\n", row_LineData, col_LineData);
 //    Data_Read_Corrective_Test(row_LoadFactor, col_LoadFactor, LoadFactor, name4);
-//    printf("row = %d, col = %d\n", row_LoadFactor, col_LoadFactor);  
 //    Data_Read_Corrective_Test(row_LoadForecast, col_LoadForecast, LoadForecastData, name5);
 //    printf("row = %d, col = %d\n", row_LoadForecast, col_LoadForecast);
 //    Data_Read_Corrective_Test(row_SFData, col_SFData, ShiftFactorData, name6);
@@ -258,6 +274,39 @@ int Data_Read( FILE * fstream, int row, int col, double* info)
     return 0;
 }
 
+/* **Data read function from CSV file. But this time will read int type data** */
+// First, the reading sequence is row by row. So, when output data, please use the same order.
+// Second, all data come from CSV file are converted to type Int.
+int Data_Read_Int( FILE * fstream, int row, int col, int* info) // **********zhang********** //16/1/2017
+{
+    FILE * fstream_inside = fstream;
+    char buffer[BUFFER_MAX];
+    char *record, *line;
+    int i = 0, j = 0;
+    //char *first_line_ptr = line;
+    
+    if (fstream_inside == NULL)   {
+        printf("\n file opening failed\n");
+        return -1;
+    }
+    
+    while ((line = fgets(buffer, sizeof(buffer), fstream_inside)) != NULL)
+    {
+        record = strtok(line, ",");
+        j = 0;
+        while (record != NULL)
+        {
+            info[j + i*col] = atoi(record);
+            ++j;
+            record = strtok(NULL, ",");
+        }
+        ++i;
+    }
+    
+    printf("\n");
+    rewind(fstream_inside);
+    return 0;
+}
 
 /* **Structure Read** */
 // This will let the structure store the address of beginning of each row. The array will be parsed as rows through column number even the origional data array is a very long array

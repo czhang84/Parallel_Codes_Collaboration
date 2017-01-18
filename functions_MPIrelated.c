@@ -34,7 +34,7 @@
 
 
 /* **Master node send stop decision to slave nodes** */
-void MasterNode_send_stopdecision(int process_size,int stop_decision)
+void MasterNode_send_stopdecision(int process_size,int *stop_decision)
 {
     int id;
     int ierr;
@@ -46,7 +46,7 @@ void MasterNode_send_stopdecision(int process_size,int stop_decision)
         id = i;
         tag = i;
         //printf("the sent stop_decision%d is %d \n",id ,stop_decision);
-        ierr = MPI_Send ( &stop_decision, 1, MPI_INT, id, tag, MPI_COMM_WORLD );
+        ierr = MPI_Send ( stop_decision, 1, MPI_INT, id, tag, MPI_COMM_WORLD );
     }
 }
 

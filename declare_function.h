@@ -17,6 +17,7 @@
 int input_data();
 int File_Size(FILE * fstream, int *row, int *col);
 int Data_Read( FILE * fstream, int row, int col, double* info);
+int Data_Read_Int( FILE * fstream, int row, int col, int* info); // **********zhang********** //16/1/2017
 int Data_Read_Corrective_Test(int row, int col, double *testing_array, char*name);
 
 
@@ -28,6 +29,8 @@ void Data_StoreTo_Structure (double ** struct_member_ptr, double * array_data_pt
 void Array_initial_double(double *Array_initialition, double length);
 void Array_initial_int(int *Array_initialition, double length);
 
+/*TaskTable related functions*/
+void task_allocation(int **TaskTable_TaskArray, int TaskTable_TaskNumber, int *node, int *scenario, int *module, int *task); // **********zhang********** //16/1/2017
 
 /*Time related functions*/
 void timestamp ( );

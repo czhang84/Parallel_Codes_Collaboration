@@ -12,11 +12,14 @@
 
 #include <stdio.h>
 
-#define BUFFER_MAX 2048 //define a constant:BUFFER_MAX ????????????????????????????????????????????
 
+
+
+
+/**************************************************  Declare This can be done MULTIPLE times**************************************************/ //******** zhang ******* 1/16/2017 
 
 /*Declare variables (constant) indicating rows and column of original CSV generator & system data*/
-int row_GenCorrective, col_GenCorrective, 
+extern int row_GenCorrective, col_GenCorrective,  //******** zhang ******* 1/16/2017
     row_GenData, col_GenData, 
     row_LineData, col_LineData, 
     row_LoadFactor, col_LoadFactor, 
@@ -26,7 +29,7 @@ int row_GenCorrective, col_GenCorrective,
     row_SRTData, col_SRTData;
 
 /*Declare pointers (constant) of arrays of sorts of parameters of generator & system*/
-double *GenCorrectiveDispatchLimitData,
+extern double *GenCorrectiveDispatchLimitData, //******** zhang ******* 1/16/2017
        *GenData,
        *LineData,
        *LoadFactor,
@@ -45,7 +48,7 @@ typedef struct GenCorrectiveDispatchLimitData{
     double *Gen_CorrectiveDispatchLimit;
 } GenCorrectiveDispatchLimitData_Struct;
 
-    GenCorrectiveDispatchLimitData_Struct GenCorrectiveDispatchLimitData_Set; //declare a structure alias
+extern GenCorrectiveDispatchLimitData_Struct GenCorrectiveDispatchLimitData_Set; //declare a structure alias //******** zhang ******* 1/16/2017
 
 typedef struct GenData{
     double *Gen_BusNum;
@@ -64,7 +67,7 @@ typedef struct GenData{
     double *Gen_FuelPrice;
 } GenData_Struct;
 
-    GenData_Struct GenData_Set;
+extern GenData_Struct GenData_Set; //******** zhang ******* 1/16/2017
 
 typedef struct LineData{
     double *Line_Num;
@@ -74,15 +77,15 @@ typedef struct LineData{
     double *Line_PowerLimit;
     } LineData_Struct;
 
-    LineData_Struct LineData_Set;
+extern LineData_Struct LineData_Set; //******** zhang ******* 1/16/2017
 
-typedef struct LoadFactiorData{
+typedef struct LoadFactor{												//Lin change!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     double *LoadFactor_BusNum;
     double *LoadFactor_LoadDistribution;
     double *LoadFactor_LoadFactor;
 } LoadFactor_Struct;
 
-    LoadFactor_Struct LoadFactor_Set;
+extern LoadFactor_Struct LoadFactor_Set; //******** zhang ******* 1/16/2017
 
 typedef struct LoadForecastData{
     double *LoadForecast_CorrectionLoad;
@@ -90,12 +93,10 @@ typedef struct LoadForecastData{
     double *LoadForecast_LoadPJM;
 } LoadForecastData_Struct;
 
-    LoadForecastData_Struct LoadForecastData_Set;
+extern LoadForecastData_Struct LoadForecastData_Set; //******** zhang ******* 1/16/2017
 
-typedef struct ShiftFactorData{
-    double *SF;
-} SFData_Struct;
 
+//SFData  is not formed as structure data.  										//Lin change!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
 typedef struct SR_MSR_Data{
@@ -104,13 +105,13 @@ typedef struct SR_MSR_Data{
     double *SR_MSR_MaxSustainedRate;
 } SRCostandMaxSustainedRateData_Struct;
 
-    SRCostandMaxSustainedRateData_Struct SRCostandMaxSustainedRateData_Set;
+extern SRCostandMaxSustainedRateData_Struct SRCostandMaxSustainedRateData_Set; //******** zhang ******* 1/16/2017
 
 typedef struct SRT_Data{
     double *SRT_SpiningResreve;
 } SRSystemRequirementData_Struct;
 
-    SRSystemRequirementData_Struct SRSystemRequirementData_Set;
+extern SRSystemRequirementData_Struct SRSystemRequirementData_Set; //******** zhang ******* 1/16/2017
 
 
 #endif /* declare_variable_h */

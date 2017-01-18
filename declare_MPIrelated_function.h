@@ -15,7 +15,7 @@
 
 /*Master node functions*/
 //void MasterNode_make_stopdecision(int *stop_decision, int stop_counter, int end_point);
-void MasterNode_send_stopdecision(int process_size,int stop_decision);
+void MasterNode_send_stopdecision(int process_size,int *stop_decision);
 //void MasterNode_set_input(double *input, int row, int col);
 void MasterNode_sendto_SlaveNode(double *input, int receiving_process_ID, int receiving_process_tag, int row, int col);
 void MasterNode_receivefrom_SlaveNode(double *output, int sending_process_ID, int sending_process_tag, int row, int col);
