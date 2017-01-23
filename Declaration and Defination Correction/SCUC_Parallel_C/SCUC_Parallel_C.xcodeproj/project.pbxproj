@@ -1,0 +1,312 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DECFB3431E2C26D900AA113A /* libgurobi70.so in Frameworks */ = {isa = PBXBuildFile; fileRef = DECFB3421E2C26D900AA113A /* libgurobi70.so */; };
+		DECFB3821E2C8EF600AA113A /* functions_MPIrelated.c in Sources */ = {isa = PBXBuildFile; fileRef = DECFB37E1E2C8EF600AA113A /* functions_MPIrelated.c */; };
+		DECFB3831E2C8EF600AA113A /* functions.c in Sources */ = {isa = PBXBuildFile; fileRef = DECFB37F1E2C8EF600AA113A /* functions.c */; };
+		DECFB3841E2C8EF600AA113A /* input_data.c in Sources */ = {isa = PBXBuildFile; fileRef = DECFB3801E2C8EF600AA113A /* input_data.c */; };
+		DECFB3851E2C8EF600AA113A /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = DECFB3811E2C8EF600AA113A /* main.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DECFB32A1E2C240900AA113A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		DECFB32C1E2C240900AA113A /* SCUC_Parallel_C */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SCUC_Parallel_C; sourceTree = BUILT_PRODUCTS_DIR; };
+		DECFB3421E2C26D900AA113A /* libgurobi70.so */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgurobi70.so; path = ../../../../Library/gurobi701/mac64/lib/libgurobi70.so; sourceTree = "<group>"; };
+		DECFB37B1E2C8EF600AA113A /* declare_function.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = declare_function.h; sourceTree = "<group>"; };
+		DECFB37C1E2C8EF600AA113A /* declare_MPIrelated_function.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = declare_MPIrelated_function.h; sourceTree = "<group>"; };
+		DECFB37D1E2C8EF600AA113A /* declare_variable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = declare_variable.h; sourceTree = "<group>"; };
+		DECFB37E1E2C8EF600AA113A /* functions_MPIrelated.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = functions_MPIrelated.c; sourceTree = "<group>"; };
+		DECFB37F1E2C8EF600AA113A /* functions.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = functions.c; sourceTree = "<group>"; };
+		DECFB3801E2C8EF600AA113A /* input_data.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = input_data.c; sourceTree = "<group>"; };
+		DECFB3811E2C8EF600AA113A /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DECFB3291E2C240900AA113A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DECFB3431E2C26D900AA113A /* libgurobi70.so in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DECFB3231E2C240900AA113A = {
+			isa = PBXGroup;
+			children = (
+				DECFB32E1E2C240900AA113A /* SCUC_Parallel_C */,
+				DECFB32D1E2C240900AA113A /* Products */,
+				DECFB3411E2C26D900AA113A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DECFB32D1E2C240900AA113A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DECFB32C1E2C240900AA113A /* SCUC_Parallel_C */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DECFB32E1E2C240900AA113A /* SCUC_Parallel_C */ = {
+			isa = PBXGroup;
+			children = (
+				DECFB37B1E2C8EF600AA113A /* declare_function.h */,
+				DECFB37C1E2C8EF600AA113A /* declare_MPIrelated_function.h */,
+				DECFB37D1E2C8EF600AA113A /* declare_variable.h */,
+				DECFB37E1E2C8EF600AA113A /* functions_MPIrelated.c */,
+				DECFB37F1E2C8EF600AA113A /* functions.c */,
+				DECFB3801E2C8EF600AA113A /* input_data.c */,
+				DECFB3811E2C8EF600AA113A /* main.c */,
+			);
+			path = SCUC_Parallel_C;
+			sourceTree = "<group>";
+		};
+		DECFB3411E2C26D900AA113A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DECFB3421E2C26D900AA113A /* libgurobi70.so */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DECFB32B1E2C240900AA113A /* SCUC_Parallel_C */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DECFB3331E2C240900AA113A /* Build configuration list for PBXNativeTarget "SCUC_Parallel_C" */;
+			buildPhases = (
+				DECFB3281E2C240900AA113A /* Sources */,
+				DECFB3291E2C240900AA113A /* Frameworks */,
+				DECFB32A1E2C240900AA113A /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SCUC_Parallel_C;
+			productName = SCUC_Parallel_C;
+			productReference = DECFB32C1E2C240900AA113A /* SCUC_Parallel_C */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DECFB3241E2C240900AA113A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = zhangcaihua;
+				TargetAttributes = {
+					DECFB32B1E2C240900AA113A = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = DECFB3271E2C240900AA113A /* Build configuration list for PBXProject "SCUC_Parallel_C" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DECFB3231E2C240900AA113A;
+			productRefGroup = DECFB32D1E2C240900AA113A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DECFB32B1E2C240900AA113A /* SCUC_Parallel_C */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DECFB3281E2C240900AA113A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DECFB3851E2C8EF600AA113A /* main.c in Sources */,
+				DECFB3821E2C8EF600AA113A /* functions_MPIrelated.c in Sources */,
+				DECFB3831E2C8EF600AA113A /* functions.c in Sources */,
+				DECFB3841E2C8EF600AA113A /* input_data.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		DECFB3311E2C240900AA113A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		DECFB3321E2C240900AA113A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		DECFB3341E2C240900AA113A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					/Library/gurobi701/mac64/include,
+					/Users/zhangcaihua/openmpi2/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					/Library/gurobi701/mac64/lib,
+					/Users/zhangcaihua/openmpi2/lib,
+					"$(LOCAL_LIBRARY_DIR)/gurobi701/mac64/lib",
+				);
+				OTHER_LDFLAGS = (
+					"-lm",
+					"-lmpi",
+					"-lgurobi70",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DECFB3351E2C240900AA113A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					/Library/gurobi701/mac64/include,
+					/Users/zhangcaihua/openmpi2/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					/Library/gurobi701/mac64/lib,
+					/Users/zhangcaihua/openmpi2/lib,
+					"$(LOCAL_LIBRARY_DIR)/gurobi701/mac64/lib",
+				);
+				OTHER_LDFLAGS = (
+					"-lm",
+					"-lmpi",
+					"-lgurobi70",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DECFB3271E2C240900AA113A /* Build configuration list for PBXProject "SCUC_Parallel_C" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DECFB3311E2C240900AA113A /* Debug */,
+				DECFB3321E2C240900AA113A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DECFB3331E2C240900AA113A /* Build configuration list for PBXNativeTarget "SCUC_Parallel_C" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DECFB3341E2C240900AA113A /* Debug */,
+				DECFB3351E2C240900AA113A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DECFB3241E2C240900AA113A /* Project object */;
+}

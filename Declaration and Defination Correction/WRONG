@@ -1,0 +1,4 @@
+1. input_data.c include itself's function
+	http://stackoverflow.com/questions/18468006/why-could-a-header-file-be-including-itself
+2. Cannot differentiate define and declare
+	http://stackoverflow.com/questions/496448/how-to-correctly-use-the-extern-keyword-in-c
